@@ -1,5 +1,5 @@
 <?php 
-  $width = "fs-lg-third fs-md-half fs-sm-half archive__latest__grid-item";
+  $width = "fs-lg-third fs-md-half fs-sm-full archive__latest__grid-item";
 
   $current_args = array(
     'posts_per_page' => 24,

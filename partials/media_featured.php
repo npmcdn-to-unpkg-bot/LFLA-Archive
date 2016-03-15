@@ -32,7 +32,7 @@
 <?php if($i == 1): ?><div class="fs-row equalized" data-equalize-options='{"target":".equalized__element"}'><?php endif; ?>
 
 <?php if($i > 0): ?>
-<div id="feature-<?php echo $i ?>" class="archive__featured-item fs-cell fs-all-half equalized__element">
+<div id="feature-<?php echo $i ?>" class="archive__featured-item fs-cell fs-all-half fs-sm-full equalized__element">
   <div class="wrapper">
     <img src="<?php echo $thumb_url ?>" class="img-responsive" ?>
     <div class="fs-row">
