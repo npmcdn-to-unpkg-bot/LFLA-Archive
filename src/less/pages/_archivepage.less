@@ -1,0 +1,42 @@
+.archive-item {
+
+  @thumbHeight : 230px;
+
+  &__speaker {
+    .font_size(11);
+    * {
+      display: none;
+    }
+  }
+  &__title {
+    .font_size(22);
+    margin-top: 0;
+  }
+  &__thumb {
+    height: @thumbHeight;
+    background-size: cover;
+    background-position: center center;
+  }
+  &__content {
+    height: @thumbHeight;
+    border-right: 1px solid @lighterGray;
+  }
+  &--featured {
+    position: relative;
+    .archive-item {
+      &__thumb {
+        height: @thumbHeight * 2;
+        &:before {
+          content: '';
+          display: block;
+          .cover();
+          background: @black25;
+        }
+      }
+      &__content {
+        .cover();
+      }
+    }
+  }
+
+}

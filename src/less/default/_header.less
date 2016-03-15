@@ -1,0 +1,40 @@
+.header {
+
+  &--main {
+    top: @spaced/2;
+  }
+  
+  @media @min {
+    padding: @spaced*.25 0;  
+  }
+  @media @tablet {
+    padding: @spaced 0;
+  }
+  
+  z-index: 99;
+
+  .btn {
+    color: @white;
+    margin-bottom: 0;
+  }
+
+  &__nav {
+    //overflow-x: hidden;
+    //overflow-y: visible;
+    &-wrap {
+      //width: 9999px;
+    }
+  }
+
+  .hide {
+    &__lg {
+      @media @desktop {
+        display: none;
+      }
+      @media @max {
+        display: inline-block;
+      }
+    }
+  }
+
+}

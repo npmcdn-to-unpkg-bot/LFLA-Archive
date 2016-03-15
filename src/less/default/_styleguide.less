@@ -1,0 +1,101 @@
+.title {
+
+  .headerFont();
+  font-weight: 300;
+
+  @media @min {
+    .font_size(28)
+  }
+  @media @tablet {
+    .font_size(36)
+  }
+  @media @desktop {
+    .font_size(36);
+    line-height: 1;
+  }
+
+  &__xs {
+    .font_size(17);
+  }
+
+  &__sm {
+    @media @min {
+      .font_size(18);
+    }
+    @media @tablet {
+      .font_size(26);
+    }
+    @media @desktop {
+      .font_size(26); 
+    }
+  }
+
+  &__md {
+    @media @min {
+      .font_size(38);  
+    }
+    @media @tablet {
+      .font_size(52);
+    }
+    @media @desktop {
+      .font_size(66);
+    }
+  }
+
+  &__lg {
+    @media @min {
+      .font_size(38);  
+    }
+    @media @tablet {
+      .font_size(52);
+    }
+    @media @desktop {
+      .font_size(84);
+    }
+  }
+
+  &__xl {
+    @media @min {
+      .font_size(38);  
+    }
+    @media @tablet {
+      .font_size(52);
+    }
+    @media @desktop {
+      .font_size(66);
+    }
+    @media @max {
+      .font_size(90);
+    }
+  }
+
+}
+
+.accent {
+
+  .accentFont();
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+
+  &__sm {
+    .font_size(12);
+  }
+
+  &--md, &__md {
+    .font_size(16);
+  }
+
+  &__lg {
+    @media @min {
+      .font_size(16);  
+    }
+    @media @tablet {
+      .font_size(16);
+    }
+    @media @desktop {
+      .font_size(18);
+    }
+  }
+
+}

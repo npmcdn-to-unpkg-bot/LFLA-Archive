@@ -1,0 +1,127 @@
+@hero__xs : 275px;
+@hero__sm : 350px;
+@hero     : 455px;
+@hero__md : 700px;
+@hero__lg : 815px;
+@hero__xl : 900px;
+
+.hero {
+
+  background-size: cover;
+  background-position: center center;
+
+	@media @min {
+		height: @hero - 100;
+	}
+  @media @mobile {
+    height: @hero - 135;
+  }
+	@media @tablet {
+		height: @hero - 100;
+	}
+	@media @desktop {
+		height: @hero
+	}
+
+  &--xs {
+    @media @min {
+      height: @hero__xs - 80;
+    }
+    @media @tablet {
+      height: @hero__xs - 40;
+    }
+    @media @desktop {
+      height: @hero__xs
+    }
+  }
+
+  &--sm {
+  	@media @min {
+  		height: @hero__sm - 80;
+  	}
+  	@media @tablet {
+  		height: @hero__sm - 40;
+  	}
+  	@media @desktop {
+  		height: @hero__sm
+  	}
+  }
+
+  &--md {
+    @media @min {
+      height: @hero__md - 200;
+    }
+    @media @tablet {
+      height: @hero__md - 100;
+    }
+    @media @desktop {
+      height: @hero__md
+    }
+  }
+  
+  &--lg {
+  	@media @min {
+  		height: @hero__lg - 215;
+  	}
+  	@media @tablet {
+  		height: @hero__lg - 100;
+  	}
+  	@media @desktop {
+  		height: @hero__lg
+  	}
+  }
+
+  &--xl {
+    @media @min {
+      height: @hero__xl - 215;
+    }
+    @media @tablet {
+      height: @hero__xl + 28;
+    }
+    @media @desktop {
+      height: @hero__xl
+    }
+  }
+
+  &__bg {
+  	&--covered {
+  		background-size: cover;
+  		background-position: center center;
+  	}
+  }
+
+  &--overlay {
+    position: relative;
+    &:before, &:after {
+      content: '';
+      display: block;
+      .cover();
+      z-index: 9;
+    }
+    &:before {
+      background: @black25;
+    }
+    &:after {
+      background: url('/assets/img/header-bg.png');
+      background-size: cover;
+      opacity: .5;
+    }
+  }
+  
+  &__content{}
+  
+  &__title{
+    
+    &--sm{}
+    
+    &--md{}
+    
+    &--lg{}
+    
+  }
+
+  .covered {
+    z-index: 25;
+  }
+
+}
