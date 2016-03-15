@@ -43,9 +43,9 @@
           }
         ?>
         <header class="text-center">
-          <span class="accent accent__sm"><?php the_field('event_date'); ?></span><br>
           <span class="accent accent__sm"><?php the_field('event_speaker'); ?></span><br>
           <span class="title title__xs"><?php the_title(); ?></span>
+          <span class="accent accent__sm"><?php the_field('event_date'); ?></span><br>
         </header>
       </div>
     </div>
