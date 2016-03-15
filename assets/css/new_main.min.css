@@ -5014,9 +5014,8 @@ html {
   padding-bottom: 75px;
 }
 #media-archive__search {
-  padding: 75px 0 75px;
+  padding: 75px 0 0;
   border-top: 1px solid #E7E7EC;
-  border-bottom: 1px solid #E7E7EC;
 }
 #media-archive__latest {
   padding: 75px 0 37.5px;
