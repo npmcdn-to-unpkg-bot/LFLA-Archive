@@ -6,6 +6,27 @@ function mobileMenu(){
 	$(".mobile-toggle").swap();
 }
 
+function openArchive(){
+  $('.zoomin').magnificPopup({
+    //type: 'ajax',
+  });
+  $('.open-modal').magnificPopup({
+    type: 'ajax',
+    mainClass: 'fs-grid',
+    callbacks: {
+      parseAjax: function(mfpResponse) {
+        mfpResponse.data = $(mfpResponse.data).find('#media-archive__single');
+        console.log('Ajax content loaded:', mfpResponse);
+      },
+      ajaxContentAdded: function() {
+        // Ajax content is loaded and appended to DOM
+        console.log(this.content);
+        fs_defaults();
+      }
+    }
+  });
+}
+
 function header(){
 	var options = {
     offset: '#media-archive__latest',
@@ -77,5 +98,7 @@ $(document).ready(function(){
 	fs_defaults();
 	openSub();
 	grid();
-	header();
+	//header();
+  openArchive();
+  $('.video-wrapper').fitVids();
 });

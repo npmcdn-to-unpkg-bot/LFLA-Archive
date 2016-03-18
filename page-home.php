@@ -8,6 +8,7 @@ $current_args = array(
   'order'          => 'ASC',
   'orderby'        => 'title',
   'paged'          => $paged,
+  's'              => 'byrne'
 );
 
 $current_posts = get_posts( $current_args );

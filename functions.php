@@ -149,3 +149,16 @@ function child_manage_woocommerce_styles() {
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'max_execution_time', '300' );
 
+
+
+function my_custom_post_status(){
+  register_post_status( 'unread', array(
+    'label'                     => _x( 'Unread', 'post' ),
+    'public'                    => true,
+    'exclude_from_search'       => true,
+    'show_in_admin_all_list'    => true,
+    'show_in_admin_status_list' => true,
+    'label_count'               => _n_noop( 'Unread <span class="count">(%s)</span>', 'Unread <span class="count">(%s)</span>' ),
+  ) );
+}
+add_action( 'init', 'my_custom_post_status' );

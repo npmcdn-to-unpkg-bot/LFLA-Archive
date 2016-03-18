@@ -24,12 +24,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-//Check if any posts were found
-if ( $posts ) {
-	?>
+$events_label_plural = tribe_get_event_label_plural();
 
-	<ol class="hfeed vcalendar">
+$posts = tribe_get_list_widget_events();
+
+// Check if any event posts are found.
+if ( $posts ) : ?>
+
+	<ol class="tribe-list-widget">
 		<?php
+		// Setup the post data for each event.
 		foreach ( $posts as $post ) :
 			setup_postdata( $post );
 			?>
@@ -37,8 +41,8 @@ if ( $posts ) {
 
 				<?php do_action( 'tribe_events_list_widget_before_the_event_title' ); ?>
 				<!-- Event Title -->
-				<h4 class="entry-title summary">
-					<a href="<?php echo tribe_get_event_link(); ?>" rel="bookmark"><?php the_title(); ?></a>
+				<h4 class="tribe-event-title">
+					<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" rel="bookmark"><?php the_title(); ?></a>
 				</h4>
 
 				<?php do_action( 'tribe_events_list_widget_after_the_event_title' ); ?>
@@ -46,28 +50,24 @@ if ( $posts ) {
 
 				<?php do_action( 'tribe_events_list_widget_before_the_meta' ) ?>
 
-				<div class="duration">
+				<div class="tribe-event-duration">
 					<?php echo tribe_events_event_schedule_details(); ?>
 				</div>
 
 				<?php do_action( 'tribe_events_list_widget_after_the_meta' ) ?>
-
-
 			</li>
 		<?php
 		endforeach;
 		?>
-	</ol><!-- .hfeed -->
+	</ol><!-- .tribe-list-widget -->
 
 	<p class="tribe-events-widget-link">
-		<a href="<?php echo tribe_get_events_link(); ?>" rel="bookmark"><?php _e( 'View All Events', 'tribe-events-calendar' ); ?></a>
+		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>" rel="bookmark"><?php printf( esc_html__( 'View All %s', 'the-events-calendar' ), $events_label_plural ); ?></a>
 	</p>
 
-	<?php
-	//No Events were Found
-} else {
-	?>
-	<p><?php _e( 'There are no upcoming events at this time.', 'tribe-events-calendar' ); ?></p>
 <?php
-}
-?>
+// No events were found.
+else : ?>
+	<p><?php printf( esc_html__( 'There are no upcoming %s at this time.', 'the-events-calendar' ), strtolower( $events_label_plural ) ); ?></p>
+<?php
+endif;

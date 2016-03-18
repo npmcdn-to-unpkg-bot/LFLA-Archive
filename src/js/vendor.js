@@ -16,3 +16,5 @@
 // @codekit-prepend "../bower_components/headhesive.js/dist/headhesive.js"
 // @codekit-prepend "../bower_components/isotope/dist/isotope.pkgd.js"
 // @codekit-prepend "../bower_components/imagesloaded/dist/imagesloaded.pkgd.js"
+// @codekit-prepend "../bower_components/magnific-popup/dist/jquery.magnific-popup.js"
+// @codekit-prepend "../bower_components/jquery.fitvids/jquery.fitvids.js"

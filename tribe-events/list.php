@@ -12,22 +12,18 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
-  tribe_events_the_header_attributes();
-} ?>
+}
+
+do_action( 'tribe_events_before_template' );
+?>
+
+	<!-- Tribe Bar -->
+<?php tribe_get_template_part( 'modules/bar' ); ?>
+
+	<!-- Main Events Content -->
+<?php tribe_get_template_part( 'list/content' ); ?>
+
+	<div class="tribe-clear"></div>
 
 <?php
-
-
-
-  do_action( 'tribe_events_before_template' );
-  include locate_template('templates/calendar-header.php');
-  get_template_part('templates/calendar', 'content');
-  get_template_part('templates/flex', 'content');
-  tribe_get_template_part( 'modules/bar' );
-  tribe_get_template_part( 'list/content' );
-  do_action( 'tribe_events_after_template' );
-
-  //include locate_template('templates/calendar-faq.php');
-  //include locate_template('templates/calendar-sponsors.php');
-
-?>
+do_action( 'tribe_events_after_template' );

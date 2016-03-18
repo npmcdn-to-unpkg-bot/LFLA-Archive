@@ -11,6 +11,7 @@
 <?php if($i == 0): ?>
 <div class="fs-row" style="display:none;">
   <div id="feature-<?php echo $i ?>" class="fs-cell fs-all-full">
+    <a href="<?php the_permalink(); ?>" class="covered"></a>
     <div class="wrapper">
       <div class="hero hero bg--gray" style="background-image: url(<?php echo $thumb_url ?>)"></div>
     </div>
@@ -33,6 +34,7 @@
 
 <?php if($i > 0): ?>
 <div id="feature-<?php echo $i ?>" class="archive__featured-item fs-cell fs-all-half fs-sm-full equalized__element">
+  <a href="<?php the_permalink(); ?>" class="covered"></a>
   <div class="wrapper">
     <img src="<?php echo $thumb_url ?>" class="img-responsive" ?>
     <div class="fs-row">

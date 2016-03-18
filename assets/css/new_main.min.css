@@ -1178,7 +1178,7 @@
   padding: 0;
   width: 10px;
   height: 10px;
-  background: #333;
+  background: #666;
   border-radius: 100%;
   margin: 0 3px;
   opacity: 0.5;
@@ -3563,6 +3563,13 @@ img.mfp-img {
   max-width: 100%;
   height: auto;
 }
+.img-responsive--wide {
+  width: 100%;
+  height: auto;
+}
+.img-responsive--centered {
+  margin: auto;
+}
 .invisible {
   visibility: hidden;
 }
@@ -3571,8 +3578,16 @@ img.rounded {
   border-radius: 50%;
 }
 .centered {
-  float: none!important;
-  margin: auto!important;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.centered--full {
+  width: 100%;
+}
+.centered--bottom {
+  top: 75%;
 }
 .wrapper {
   padding: 16.66666667px;
@@ -4680,13 +4695,15 @@ html {
   }
 }
 .title__xs {
-  font-size: 17px;
-  font-size: 1.0625rem;
+  font-size: 19px;
+  font-size: 1.1875rem;
+  line-height: 1.3;
 }
 @media screen and (min-width: 300px) {
   .title__sm {
     font-size: 18px;
     font-size: 1.125rem;
+    line-height: 1.3;
   }
 }
 @media screen and (min-width: 740px) {
@@ -4928,6 +4945,65 @@ html {
   top: 0;
   width: 100%;
 }
+.archive__podcast {
+  min-height: 80px;
+  margin-top: 12.5px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.archive__podcast .play {
+  text-decoration: none;
+  display: block;
+  padding: 25px;
+  color: #fff;
+  font-size: 60px;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+.archive__podcast .play:before {
+  position: relative;
+  top: .125em;
+}
+.archive__podcast .frame {
+  min-height: 80px;
+  background: #1CA4DE;
+  overflow: hidden;
+}
+.archive__podcast .frame--dark {
+  background: #1b9dd5;
+  border-right: 1px solid rgba(255, 255, 255, 0.25);
+}
+.archive__single-content {
+  position: relative;
+  z-index: 50;
+}
+.archive__single-title {
+  position: relative;
+  padding: 10px 30px 0;
+}
+.archive__single-bg {
+  background-size: cover;
+  background-position: center top;
+  transform: scale(1.1, 1.1);
+  -webkit-filter: blur(10px);
+}
+.archive__single-bg--wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.archive__single__gallery-item {
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 25px;
+  width: 100%;
+  display: block;
+}
+.archive__single__gallery--tall {
+  height: 425px;
+}
+.archive__single__gallery--wide {
+  height: 200px;
+}
 .archive__featured .fs-equalize-element .wrapper {
   position: relative;
   top: 50%;
@@ -4937,6 +5013,12 @@ html {
 .archive__featured-item {
   position: relative;
 }
+.archive__featured-item img {
+  transition: 300ms ease;
+}
+.archive__featured-item:hover img {
+  opacity: 0.9;
+}
 .archive__featured-item .wrapper {
   width: 100%;
 }
@@ -4944,11 +5026,29 @@ html {
   width: 100%;
   margin-bottom: 12.5px;
 }
+.archive__latest-category {
+  position: absolute;
+  z-index: 88;
+  top: 0;
+  left: 0;
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
 .archive__latest__grid-item {
   margin-bottom: 50px;
 }
 .archive__latest__grid-item > div {
   margin: 0 9.09090909px;
+  position: relative;
+  transition: 300ms ease;
+}
+.archive__latest__grid-item > div:hover {
+  opacity: .9;
 }
 .archive__search-title {
   display: block;
@@ -5020,14 +5120,36 @@ html {
 #media-archive__latest {
   padding: 75px 0 37.5px;
 }
-.page-template-page-alt .header--main {
+.page-template-page-alt .header--main,
+.single-post .header--main {
   border-bottom: 1px solid #E7E7EC;
 }
-.page-template-page-alt .btn__nav {
+.page-template-page-alt .btn__nav,
+.single-post .btn__nav {
   color: #999999;
 }
-.page-template-page-alt .btn__nav:hover {
+.page-template-page-alt .btn__nav:hover,
+.single-post .btn__nav:hover {
   color: #1CA4DE;
+}
+.mfp-bg {
+  background: none;
+}
+.mfp-wrap.fs-grid {
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.mfp-wrap.fs-grid.mfp-ready {
+  opacity: 1;
+}
+.fs__carousel {
+  padding: 25px 0;
+  background: #111;
+  border-radius: 3px;
 }
 .spotlight__item {
   background: #333;

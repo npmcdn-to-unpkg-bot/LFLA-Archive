@@ -103,6 +103,13 @@
   display: block;
   max-width: 100%;
   height: auto;
+  &--wide {
+    width: 100%;
+    height: auto;
+  }
+  &--centered {
+    margin: auto;
+  }
 }
 
 .invisible {
@@ -115,8 +122,13 @@ img.rounded {
 }
 
 .centered {
-  float: none!important;
-  margin: auto!important;
+  .center();
+  &--full {
+    width: 100%;
+  }
+  &--bottom {
+    top: 75%
+  }
 }
 
 .wrapper {
