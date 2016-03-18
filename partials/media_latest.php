@@ -63,7 +63,7 @@
       </div>
     </div>
     <?php endforeach; wp_reset_postdata(); ?>
-    <?php # echo do_shortcode('[ajax_load_more post_type="tribe_events" offset="24" transition="none" images_loaded="true"]' );?>
+    <?php echo do_shortcode('[ajax_load_more post_type="tribe_events" offset="24" transition="none" images_loaded="true"]' );?>
 
   </div>
 </div>

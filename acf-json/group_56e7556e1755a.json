@@ -16,7 +16,7 @@
                 "id": ""
             },
             "post_type": [
-                "post"
+                "tribe_events"
             ],
             "taxonomy": [],
             "filters": [
@@ -47,5 +47,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1458001351
+    "modified": 1458327277
 }
