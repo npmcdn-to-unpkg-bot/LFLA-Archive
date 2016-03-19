@@ -14,7 +14,7 @@
     </div>
   </div>
 
-<?php include locate_template('partials/media_featured.php');?>
+<?php include locate_template('partials/media_slider.php');?>
 <?php endif; ?>
 <?php include locate_template('partials/media_search.php');?>
 <?php include locate_template('partials/media_latest.php');?>

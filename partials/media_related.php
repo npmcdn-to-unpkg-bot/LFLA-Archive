@@ -1,8 +1,3 @@
-<hr class="divider">
-<header class="text-center"><span class="accent">Related Media</span></header>
-<hr class="invisible compact">
-<div class="relatedposts fs-row iso-grid">
-
 <?php
 $orig_post = $post;
 global $post;
@@ -19,6 +14,15 @@ $args=array(
 );
 
 $my_query = new wp_query( $args );
+
+if ( have_posts() ): ?> 
+
+<hr class="divider">
+<header class="text-center"><span class="accent">Related Media</span></header>
+<hr class="invisible compact">
+<div class="relatedposts fs-row iso-grid">
+
+<?php endif;
 
 while( $my_query->have_posts() ) {
 $my_query->the_post();

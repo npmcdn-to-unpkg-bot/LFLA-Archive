@@ -16,13 +16,14 @@
                 "id": ""
             },
             "post_type": [
-                "tribe_events"
+                "tribe_events",
+                "page",
+                "post"
             ],
             "taxonomy": [],
             "filters": [
                 "search",
-                "post_type",
-                "taxonomy"
+                "post_type"
             ],
             "elements": "",
             "min": "",
@@ -47,5 +48,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1458327277
+    "modified": 1458345233
 }

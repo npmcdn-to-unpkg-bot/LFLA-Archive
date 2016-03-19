@@ -1,5 +1,45 @@
 .archive {
 
+  &__slider {
+    overflow: visible;
+  }
+
+  &__cats {
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+    transform: translateY(-100%);
+    text-align: center;
+    position: absolute;
+    margin-top: -1px;
+    &.featured {
+      li {
+        a,span {
+          margin: 0 -3px;
+        }
+        span {
+          padding-right: 0;
+        }
+      }
+    }
+    li {
+      display: inline-block;
+      a,span {
+        padding: 5px 8px;
+        .accentFont();
+        .font_size(12);
+        letter-spacing: 1px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: @white;
+        background-color: @blue;
+      }
+      &:before {
+        display: none;
+      }
+    }
+  }
+
   &__filters {
     select, input[type=submit] {
       width: 100%;
@@ -65,10 +105,12 @@
       background-size: cover;
       background-position: center top;
       transform: scale(1.1, 1.1);
+      opacity: .66;
       -webkit-filter: blur(10px);
       &--wrapper {
         position: relative;
         overflow: hidden;
+        background: @black;
       }
     }
     &__gallery {
@@ -117,7 +159,7 @@
   &__latest {
     &-thumb {
       width: 100%;
-      margin-bottom: @spaced/2;
+      //margin-bottom: @spaced/2;
     }
     &-category {
       position: absolute;
@@ -138,6 +180,7 @@
         margin: 0 @spaced/2.75;
         position: relative;
         transition: 300ms ease;
+        background-color: @bgGray;
         &:hover {
           opacity: .9;
         }
@@ -210,10 +253,14 @@
 #media-archive {
   padding-top: 150px;
   &__features {
-    padding-bottom: @spaced*3;
+    padding-bottom: @spaced*1;
+    overflow: hidden;
+    .hero {
+      margin-right: @spaced;
+    }
   }
   &__search {
-    padding: @spaced*3 0 0;
+    padding: @spaced*2 0 0;
     border-top: 1px solid @lighterGray;
     //border-bottom: 1px solid @lighterGray;
   }
@@ -222,7 +269,7 @@
   }
 }
 
-.page-template-page-alt, .single-post {
+.page-template-page-alt, .single-post, .events-single {
   .header--main {
     border-bottom: 1px solid @lighterGray;
   }
@@ -231,6 +278,11 @@
     &:hover {
       color: @blue;
     }
+  }
+}
+.events-single {
+  .header--main {
+    border-bottom: 0;
   }
 }
 
@@ -251,7 +303,7 @@
 }
 
 .fs__carousel {
-  padding: @spaced 0;
-  background: #111;
-  border-radius: 3px;
+  // padding: @spaced 0;
+  // background: #111;
+  // border-radius: 3px;
 }

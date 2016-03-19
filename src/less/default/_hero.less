@@ -1,7 +1,7 @@
 @hero__xs : 275px;
 @hero__sm : 350px;
 @hero     : 455px;
-@hero__md : 700px;
+@hero__md : 600px;
 @hero__lg : 815px;
 @hero__xl : 900px;
 
@@ -9,6 +9,10 @@
 
   background-size: cover;
   background-position: center center;
+
+  .centered {
+    z-index: 10;
+  }
 
 	@media @min {
 		height: @hero - 100;

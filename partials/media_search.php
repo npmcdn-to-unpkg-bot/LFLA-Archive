@@ -1,6 +1,6 @@
 <div id="media-archive__search">
   <div class="fs-row">
-    <div class="fs-cell fs-all-full text-center">
+    <div class="fs-cell fs-lg-10 fs-md-6 fs-sm-3 fs-centered text-center">
       <span class="archive__search-title title title--xl">Dig through the LFLA archives to find lorem ipsum.</span>
       <span class="archive__search-title title title--xl">We've got content from 2005-2016</span>
       <div class="archive__search-menu">
