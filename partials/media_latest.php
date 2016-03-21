@@ -33,7 +33,7 @@
     <?php foreach ( $events as $post ) : setup_postdata( $post ); ?>
     <div class="iso-grid__item fs-cell <?php echo $width; ?>">
       <div>
-        <a href="<?php the_permalink(); ?>" class="coveredss"></a>
+        <a href="<?php the_permalink(); ?>" class="covered"></a>
         <?php $type = get_field('event_type'); ?>
         <?php 
           if($type == 'aloud_centrallib') {
@@ -63,11 +63,14 @@
           <span class="title title__xs"><?php echo strip_tags(get_the_title()); ?></span><br>
           <em><span class="title title__xxs"><?php the_field('event_subtitle'); ?></span></em><br>
           <span class="accent accent__sm"><?php echo tribe_get_start_date(); ?></span><br>
+          <?php if(get_field('gallery')): ?><span class="ss-gizmo ss-gallery">hello</span><?php endif; ?>
+          <?php if(get_field('podcast')): ?><span class="ss-gizmo ss-music">hello</span><?php endif; ?>
+          <?php if(get_field('video')): ?><span class="ss-gizmo ss-video"></span><?php endif; ?>
         </header>
       </div>
     </div>
     <?php endforeach; wp_reset_postdata(); ?>
-    <?php echo do_shortcode('[ajax_load_more post_type="tribe_events" offset="5" transition="none" images_loaded="true" scroll="false"]' );?>
+    <?php echo do_shortcode('[ajax_load_more button_label="More from the Archives" post_type="tribe_events" offset="5" transition="none" images_loaded="true" scroll="false"]' );?>
 
   </div>
 </div>

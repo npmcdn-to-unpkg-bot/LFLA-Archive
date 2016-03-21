@@ -32,6 +32,7 @@ $my_query->the_post();
 <div class="iso-grid__item fs-cell fs-lg-half fs-md-full fs-sm-3">
 <div class="video-wrapper"><?php the_field('video_embed'); ?></div>
 <div class="text-center"><?php the_title(); ?></div>
+<hr class="compact">
 </div>     
 <?php endif; ?>
 
@@ -40,6 +41,7 @@ $my_query->the_post();
 <a style="text-decoration: none;" class="title title__xs" href="<?php the_permalink(); ?>">Event: <?php the_title(); ?></a>
 <br>
 <?php include locate_template('partials/media_podcast.php' );?>
+<hr class="compact">
 </div>    
 <?php endif; ?>
 
@@ -55,6 +57,7 @@ $my_query->the_post();
 <a style="display:block; margin-top: 12.5px; text-decoration: none;" class="title title__xs" href="<?php the_permalink(); ?>">
 <img src="<?php echo $bgImageUrl; ?>" class="img-responsive" />
 </a>
+<hr class="compact">
 </div>
 <?php endif; ?>
 

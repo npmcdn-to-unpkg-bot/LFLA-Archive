@@ -7,8 +7,14 @@ function mobileMenu(){
 }
 
 function openArchive(){
-  $('.zoomin').magnificPopup({
-    //type: 'ajax',
+  $('.zoomin-gallery').magnificPopup({
+    type: 'image',
+    delegate: 'a',
+    gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+    },
   });
   $('.open-modal').magnificPopup({
     type: 'ajax',

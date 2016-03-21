@@ -5,14 +5,17 @@
 <?php 
   $bgImage = $images[0];
   $imageid = $bgImage['id'];
-  $bgImageUrl = $bgImage['sizes']['large']; 
-  if(!$images){
-    $bgImageUrl = $bgImage['sizes']['large']; 
-  } else {
-    $thumb_id = get_post_thumbnail_id();
-    $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
-    $bgImageUrl = $thumb_url_array[0];
-  }
+//  $bgImageUrl = $bgImage['sizes']['large']; 
+//  if($images){
+//    $bgImageUrl = $bgImage['sizes']['large']; 
+//  } else {
+//    $thumb_id = get_post_thumbnail_id();
+//    $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+//    $bgImageUrl = $thumb_url_array[0];
+//  }
+  $thumb_id = get_post_thumbnail_id();
+  $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+  $bgImageUrl = $thumb_url_array[0];
 ?>
 
 <div class="wrapper">
@@ -68,7 +71,7 @@
 <div class="fs-row iso-grid">
 <?php foreach($images as $image): ?>
 
-<div class="fs-cell fs-lg-fourth fs-md-third fs-sm-3 iso-grid__item ">
+<div class="fs-cell fs-lg-fourth fs-md-third fs-sm-3 iso-grid__item zoomin-gallery">
 <?php 
   $height = $image['height'];
   $width =  $image['width']; 

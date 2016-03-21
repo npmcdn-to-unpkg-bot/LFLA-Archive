@@ -4341,6 +4341,9 @@ input[type=button] {
   background-size: cover;
   background-position: center center;
 }
+.hero.slider {
+  background-position: center top;
+}
 .hero .centered {
   z-index: 10;
 }
@@ -5077,6 +5080,15 @@ html {
 }
 .archive__single__gallery--wide {
   height: 200px;
+}
+.archive__featured-icons {
+  color: #fff;
+  margin: 10px 0;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+.archive__featured-icons span {
+  margin: 0 3px;
 }
 .archive__featured .fs-equalize-element .wrapper {
   position: relative;
