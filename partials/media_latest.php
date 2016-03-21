@@ -70,7 +70,8 @@
       </div>
     </div>
     <?php endforeach; wp_reset_postdata(); ?>
-    <?php echo do_shortcode('[ajax_load_more button_label="More from the Archives" post_type="tribe_events" offset="5" transition="none" images_loaded="true" scroll="false"]' );?>
+
+    <?php echo do_shortcode('[ajax_load_more post_type="post, tribe_events" offset="10" posts_per_page="10" pause="true" transition="fade" images_loaded="true"]' );?>
 
   </div>
 </div>
