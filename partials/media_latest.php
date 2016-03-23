@@ -35,23 +35,47 @@
       <div>
         <a href="<?php the_permalink(); ?>" class="coveredss"></a>
         <?php 
-          if (has_post_thumbnail()){
-            //the_post_thumbnail('original', array('class' => 'archive__latest-thumb img-responsive'));
-            $thumb_id = get_post_thumbnail_id();
-            $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-            $thumb = $thumb_url_array[0];
+          $thumb_id = get_post_thumbnail_id();
+          $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+          $images = get_field('gallery');
+          $image = $images[0];
+          $imageid = $image['id'];
+
+          if($images){
+
+            $thumb = $image['sizes']['large'];
+
           } else {
-            $images = get_field('gallery');
-            $image = $images[0];
-            $imageid = $image['id'];
-            if($images){
-              //echo '<img class="archive__latest-thumb img-responsive" src="' .$image['sizes']['large'].'" alt="'. $image['alt'].'" />';
-              $thumb = $image['sizes']['large'];
+
+            if(has_post_thumbnail()){
+
+              $thumb = $thumb_url_array[0];
+
             } else {
-              //echo 'hello';
-              echo '<div class="hero hero--xs archive__latest-thumb bg--blue"></div>';  
-            } 
+
+              $thumb = '';
+
+            }
+
           }
+
+          //if (has_post_thumbnail()){
+          //  //the_post_thumbnail('original', array('class' => 'archive__latest-thumb img-responsive'));
+          //  $thumb_id = get_post_thumbnail_id();
+          //  $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+          //  $thumb = $thumb_url_array[0];
+          //} else {
+          //  $images = get_field('gallery');
+          //  $image = $images[0];
+          //  $imageid = $image['id'];
+          //  if($images){
+          //    //echo '<img class="archive__latest-thumb img-responsive" src="' .$image['sizes']['large'].'" alt="'. $image['alt'].'" />';
+          //    $thumb = $image['sizes']['large'];
+          //  } else {
+          //    //echo 'hello';
+          //    echo '<div class="hero hero--xs archive__latest-thumb bg--blue"></div>';  
+          //  } 
+          //}
         ?>
         <div class="archive__latest-thumb" style="background-image:url(<?php echo $thumb; ?>);"></div>
         <?php echo media_category(); ?>

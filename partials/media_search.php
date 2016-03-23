@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<?php if($hello): ?>
+<?php if(!$hello): ?>
 <div id="media-archive__filters" class="archive__filters">
   <div class="fs-row">
     <div class="fs-cell fs-lg-10 fs-md-6 fs-sm-3 fs-centered">
