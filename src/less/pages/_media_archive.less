@@ -167,6 +167,12 @@
   &__latest {
     &-thumb {
       width: 100%;
+      background-size: cover;
+      background-position: top center;
+      margin-bottom: @spaced/2;
+      @media @min {
+        height: 140px;
+      }
       //margin-bottom: @spaced/2;
     }
     &-category {
@@ -188,7 +194,7 @@
         margin: 0 @spaced/2.75;
         position: relative;
         transition: 300ms ease;
-        background-color: @bgGray;
+        //background-color: @bgGray;
         &:hover {
           opacity: .9;
         }
@@ -259,7 +265,7 @@
 }
 
 #media-archive {
-  padding-top: 150px;
+  padding-top: 94px;
   &__features {
     padding-bottom: @spaced*1;
     overflow: hidden;
@@ -269,7 +275,7 @@
   }
   &__search {
     padding: @spaced*2 0 0;
-    border-top: 1px solid @lighterGray;
+    //border-top: 1px solid @lighterGray;
     //border-bottom: 1px solid @lighterGray;
   }
   &__latest {
@@ -279,7 +285,7 @@
 
 .page-template-page-alt, .single-post, .events-single {
   .header--main {
-    border-bottom: 1px solid @lighterGray;
+    //border-bottom: 1px solid @lighterGray;
   }
   .btn__nav {
     color: @gray;

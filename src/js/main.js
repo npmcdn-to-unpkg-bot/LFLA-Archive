@@ -68,6 +68,9 @@ function grid(){
   	});
 	});
 	$(function() {
+    $('.iso-grid').equalize({
+      target: ".equal"
+    });
 	  var masonryPreloadedInit = true;
 	   // On page load, initiate Masonry
 	   if($('.iso-grid').length){		

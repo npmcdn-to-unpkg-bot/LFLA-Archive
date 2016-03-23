@@ -2,7 +2,9 @@
 
 <div id="media-archive" class="fs-grid">
 <?php if ( !isset($_GET['query'])): ?>
-  
+<?php include locate_template('partials/media_slider.php');?>
+
+  <?php if($hello): ?>
   <div class="page__header">
     <div class="fs-row">
       <div class="fs-cell fs-all-full text-center">
@@ -13,8 +15,8 @@
       </div>
     </div>
   </div>
+  <?php endif; ?>
 
-<?php include locate_template('partials/media_slider.php');?>
 <?php endif; ?>
 <?php include locate_template('partials/media_search.php');?>
 <?php include locate_template('partials/media_latest.php');?>
