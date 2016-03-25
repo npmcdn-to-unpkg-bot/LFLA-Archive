@@ -23,6 +23,7 @@
 @orange:      #E37428;
 @pink:        RGBA(226, 67, 140, 1);
 @teal:        #3BB8EA;
+@pink:        #EB168C;
 
 // UI
 @success:     #74C080;
@@ -230,6 +231,9 @@ img.rounded {
   &--blue {
     background-color: @blue;
   }
+  &--pink {
+    background-color: @pink;
+  }
 }
 
 .color {
@@ -310,4 +314,13 @@ img.rounded {
 
 .nomargin {
   margin: 0;
+}
+
+.pinned {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  &--bottom {
+    bottom: 0;
+  }
 }

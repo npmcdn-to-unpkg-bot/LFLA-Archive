@@ -2,7 +2,7 @@
 
 <div id="media-archive" class="fs-grid">
 <?php if ( !isset($_GET['query'])): ?>
-<?php include locate_template('partials/media_slider.php');?>
+<?php include locate_template('partials/media_slider-3.php');?>
 
   <?php if($hello): ?>
   <div class="page__header">

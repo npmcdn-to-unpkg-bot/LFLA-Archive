@@ -12,6 +12,7 @@ include_once locate_template('/lib/enque-js.php' );
 //include_once locate_template('/lib/woo-confirmations.php' );
 include_once locate_template('/lib/videoembed.php' );
 include_once locate_template('/lib/media_archive.php' );
+include_once locate_template('/lib/helpers.php' );
 //include_once locate_template('/lib/woo-ajax.php' );
 
 // ACF Includes Nonsense
