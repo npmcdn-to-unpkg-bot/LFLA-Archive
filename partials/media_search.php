@@ -22,7 +22,7 @@
 <div id="media-archive__filters" class="archive__filters">
   <div class="fs-row">
     <div class="fs-cell fs-lg-10 fs-md-6 fs-sm-3 fs-centered">
-      <form action="/" class="fs-row">
+      <form role="search" method="get" action="<?php echo home_url( '/' ); ?>" class="fs-row">
         <div class="fs-cell fs-lg-3 fs-md-2 fs-sm-3">
           <select name="program" class="bg--bgGray">
             <option value="" class="text-center">Select Program</option>
@@ -33,12 +33,12 @@
               $terms = get_terms($args); 
               foreach($terms as $term):
             ?>
-            <option value="<?php echo $term->name; ?>" ><?php echo $term->name; ?></option>
+            <option value="<?php echo $term->slug; ?>" ><?php echo $term->name; ?></option>
             <?php endforeach; ?>
           </select>
         </div>
         <div class="fs-cell fs-lg-3 fs-md-2 fs-sm-3">
-          <select name="year" class="bg--bgGray">
+          <select name="eventdate" class="bg--bgGray">
             <option value="" class="text-center">Select Year</option>
             <?php 
               $starting_year  = 1995;

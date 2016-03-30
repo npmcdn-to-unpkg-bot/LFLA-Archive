@@ -133,6 +133,7 @@ function numericPostsNav () {
     $links[] = $paged + 1;
   }
 
+  echo '<hr class="divider">';
   echo '<nav class="page-navigation">' . "\n";
 
   // Previous Post Link
@@ -182,6 +183,7 @@ function numericPostsNav () {
   // }
 
   echo '</nav>' . "\n";
+  echo '<hr class="divider">';
 }
 
 // Subscribe to newsletter

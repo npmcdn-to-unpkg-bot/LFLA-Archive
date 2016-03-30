@@ -2,8 +2,22 @@
   $width = "fs-xl-fifth fs-lg-fourth fs-md-half fs-sm-full archive__latest__grid-item equal";
   
   $searchQuery = $_GET['query'];
-  $date = $_GET['date'];
-  $date = '2012';
+  $program     = $_GET['program'];
+  #$program     = 'benefit-events';
+  $eventdate   = $_GET['eventdate'];
+  $venue       = $_GET['venue'];
+
+  $tax_query = array('relation' => 'AND');
+
+  if (isset($program)) {
+    $tax_query[] =  array(
+      'taxonomy' => 'tribe_events_cat',
+      'field'    => 'slug',
+      'terms'    => $program,
+    );
+  }
+
+  //var_dump($program);
 
   $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
@@ -17,8 +31,9 @@
     'post_status'    => 'publish',
     'post_type'      => 'tribe_events',
     'meta_key'       => '_thumbnail_id',
-    //'orderby'        => '_EventStartDate',  
+    'orderby'        => '_EventStartDate',  
     '&paged'         => $paged,
+    'tax_query'      => $tax_query,
   );
   $wp_query->query($current_args); 
 
@@ -76,9 +91,7 @@
     <?php endwhile; ?>
 
     <div class="iso-grid__item archive__latest__grid-item fs-cell fs-all-full">
-      <hr class="divider">
       <?php numericPostsNav(); ?>
-      <hr class="divider">
     </div>
 
     <?php 
