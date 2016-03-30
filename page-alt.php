@@ -1,5 +1,12 @@
 <?php  Themewrangler::setup_page('new_default|not default','new_vendor | new_scripts');get_header('v2'/***Template Name: Alt */);  ?>
 
+<?php 
+  $searchQuery = $_GET['query'];
+  $program     = $_GET['program'];
+  $eventdate   = $_GET['eventdate'];
+  $venue       = $_GET['venue'];
+?>
+
 <div id="media-archive" class="fs-grid">
 <?php if ( !isset($_GET['query'])): ?>
 <?php if ( !isset($_GET['program'])): ?>

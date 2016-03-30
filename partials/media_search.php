@@ -33,7 +33,7 @@
               $terms = get_terms($args); 
               foreach($terms as $term):
             ?>
-            <option value="<?php echo $term->slug; ?>" ><?php echo $term->name; ?></option>
+            <option <?php if( $program == $term->slug): echo 'selected'; endif; ?> value="<?php echo $term->slug; ?>" ><?php echo $term->name; ?></option>
             <?php endforeach; ?>
           </select>
         </div>
@@ -44,7 +44,11 @@
               $starting_year  = 1995;
               $ending_year    = date("Y");
               for( $starting_year; $starting_year <= $ending_year; $starting_year++ ) {
-                $years[] = '<option value="'.$starting_year.'">'.$starting_year.'</option>';
+                if( $eventdate == $starting_year):
+                  $years[] = '<option selected value="'.$starting_year.'">'.$starting_year.'</option>';
+                else :
+                  $years[] = '<option value="'.$starting_year.'">'.$starting_year.'</option>';
+                endif;
               }
             ?>
             <?php echo implode("\n\r", array_reverse($years));  ?>

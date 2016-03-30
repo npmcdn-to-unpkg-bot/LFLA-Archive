@@ -1,11 +1,5 @@
 <?php 
   $width = "fs-xl-fifth fs-lg-fourth fs-md-half fs-sm-full archive__latest__grid-item equal";
-  
-  $searchQuery = $_GET['query'];
-  $program     = $_GET['program'];
-  #$program     = 'benefit-events';
-  $eventdate   = $_GET['eventdate'];
-  $venue       = $_GET['venue'];
 
   $tax_query = array('relation' => 'AND');
 
@@ -17,7 +11,7 @@
     );
   }
 
-  #var_dump($searchQuery);
+  # var_dump($eventdate);
 
   $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
@@ -35,6 +29,13 @@
     '&paged'         => $paged,
     'tax_query'      => $tax_query,
     's'              => $searchQuery,
+    'meta_query'     => array(
+      array(
+        'key'     => '_EventStartDate',
+        'value'   => $eventdate,
+        'compare' => 'LIKE',
+      ),
+    ),
   );
   $wp_query->query($current_args); 
 
