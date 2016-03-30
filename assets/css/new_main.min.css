@@ -5348,6 +5348,9 @@ html {
 .mfp-wrap.fs-grid.mfp-ready {
   opacity: 1;
 }
+.mfp-bg {
+  background: #000;
+}
 .page-navigation {
   text-align: center;
   font-family: 'Gotham', sans-serif;
