@@ -17,7 +17,7 @@
     );
   }
 
-  //var_dump($program);
+  #var_dump($searchQuery);
 
   $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
@@ -34,6 +34,7 @@
     'orderby'        => '_EventStartDate',  
     '&paged'         => $paged,
     'tax_query'      => $tax_query,
+    's'              => $searchQuery,
   );
   $wp_query->query($current_args); 
 
@@ -44,7 +45,7 @@
 
 <div id="media-archive__latest">
   <div class="iso-grid fs-row archive__latest">
-    <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+    <?php if ( have_posts() ) : while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
     <?php #foreach ( $events as $post ) : setup_postdata( $post ); ?>
     <div class="iso-grid__item fs-cell <?php echo $width; ?>">
       <div>
@@ -88,7 +89,18 @@
         </header>
       </div>
     </div>
-    <?php endwhile; ?>
+    <?php endwhile; else :?>
+
+    <div class="iso-grid__item fs-cell fs-all-full">
+      <div class="hero bg--bgGray relative">
+        <div class="centered text-center">
+          <span class="title title--md">Sorry, no results.</span><br>
+          <a href="/">Go back to the Media Archive</a>
+        </div>
+      </div>
+    </div>
+
+    <?php endif; ?>
 
     <div class="iso-grid__item archive__latest__grid-item fs-cell fs-all-full">
       <?php numericPostsNav(); ?>
