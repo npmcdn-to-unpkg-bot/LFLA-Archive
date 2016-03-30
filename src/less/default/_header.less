@@ -3,6 +3,31 @@
   &--main {
     top: @spaced/2;
   }
+
+  &--clone {
+    top: 0;
+    position: fixed;
+    transform: translateY(-200%);
+    transition: 300ms ease;
+    padding: 0!important;
+    .wrap {
+      max-width: 1480px;
+      margin: auto;
+      background: @black75;
+      padding: @spaced/2 0;
+      box-shadow: 0 0 @spaced @black25;
+    }
+    .btn__logo {
+      width: 60px;
+      height: 60px;
+      transform: translateY(-@spaced*.5);
+    }
+  }
+
+  &--stick {
+    transform: translateY(0);
+    z-index: 99;
+  }
   
   @media @min {
     padding: @spaced*.25 0;  

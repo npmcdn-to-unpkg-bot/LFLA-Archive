@@ -1,3 +1,20 @@
+function headHesive(){
+  var options = {
+    offset: 200,
+    classes: {
+        clone:   'header--clone fs-grid',
+        stick:   'header--stick',
+        unstick: 'header--unstick'
+    },
+    onInit:    function () {
+      $( ".header--clone" ).wrapInner( "<div class='wrap'></div>");
+    },
+  };
+
+  // Initialise with options
+  var banner = new Headhesive('.header--main', options);
+}
+
 function mobileMenu(){
 	// Clone that thing
 	var a = $('#header-navigation').html();
@@ -109,5 +126,6 @@ $(document).ready(function(){
 	grid();
 	//header();
   openArchive();
+  headHesive();
   $('.video-wrapper').fitVids();
 });

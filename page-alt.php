@@ -31,4 +31,19 @@
 <?php include locate_template('partials/media_latest.php');?>
 </div>
 
+<script>
+  $(document).ready(function(){
+    $('.archive__slider-slide').hover(
+      function() {
+        $(".archive__header").addClass('active');
+        $(".archive__header .centered").addClass('active');
+      },
+      function() {
+        $(".archive__header").removeClass('active');
+        $(".archive__header .centered").removeClass('active');
+      }
+    );
+  });
+</script>
+
 <?php get_footer('v2'); ?>

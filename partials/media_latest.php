@@ -35,6 +35,11 @@
         'value'   => $eventdate,
         'compare' => 'LIKE',
       ),
+      array(
+        'key'     => '_EventVenueID',
+        'value'   => $venue,
+        'compare' => 'LIKE',
+      ),
     ),
   );
   $wp_query->query($current_args); 
@@ -50,7 +55,7 @@
     <?php #foreach ( $events as $post ) : setup_postdata( $post ); ?>
     <div class="iso-grid__item fs-cell <?php echo $width; ?>">
       <div>
-        <a href="<?php the_permalink(); ?>" class="covereds"></a>
+        <a href="<?php the_permalink(); ?>" class="covered"></a>
         <?php 
           $thumb_id = get_post_thumbnail_id();
           $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);

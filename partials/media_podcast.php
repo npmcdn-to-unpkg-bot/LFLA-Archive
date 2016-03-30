@@ -9,6 +9,7 @@
 
 <div class="fs-cell fs-lg-9 fs-md-4 fs-sm-2 fs-contained relative frame">
 <div class="centered centered--full text-center">
+<span class="accent accent__sm color--white">Event Podcast: </span> 
 <span class="title title__xs color--white"><?php the_title(); ?></span>
 </div>
 </div>

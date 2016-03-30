@@ -61,7 +61,7 @@
               $venues = tribe_get_venues();
               foreach($venues as $post): setup_postdata($post);
             ?>
-            <option value="<?php the_title(); ?>" ><?php the_title(); ?></option>
+            <option <?php if( $venue == get_the_id()): echo 'selected'; endif; ?> value="<?php the_id(); ?>"><?php the_title(); ?></option>
             <?php endforeach; wp_reset_postdata(); ?>
           </select>
           </div>
