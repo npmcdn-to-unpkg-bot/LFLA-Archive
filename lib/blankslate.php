@@ -107,6 +107,7 @@ add_image_size( 'whatwefund', 700, 550, true );
 add_image_size( 'archive-small', 700, 450, true );
 add_image_size( 'whatwefund-twothirds', 1200, 455, true );
 add_image_size( 'event-gallery-full', 1200, 1200, false );
+add_image_size( 'gallery-xs', 85  , 35,  true );
 
 add_action('after_setup_theme', 'remove_admin_bar');
 

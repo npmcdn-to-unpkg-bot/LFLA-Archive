@@ -17,6 +17,32 @@
   $bgImageUrl = $thumb_url_array[0];
 ?>
 
+<?php 
+  $thumb_id = get_post_thumbnail_id();
+  $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'large', true);
+  $images = get_field('gallery');
+  $image = $images[0];
+  $imageid = $image['id'];
+
+  if($images){
+
+    $thumb = $image['sizes']['large'];
+
+  } else {
+
+    if(has_post_thumbnail()){
+
+      $thumb = $thumb_url_array[0];
+
+    } else {
+
+      $thumb = '/assets/img/comingsoon.png';
+
+    }
+
+  }
+?>
+
 <div class="wrappers">
   <div class="hero relative">
     <div class='centered centered--bottom centered--full' style="z-index: 60">
@@ -26,8 +52,8 @@
             <?php echo media_category(); ?>
             <br>
             <span class="archive__single-title title title__md color--white"><?php the_title(); ?></span><br><br>
-            <em><span class="title title__sm color--white"><?php the_field('event_subtitle'); ?></span></em><br>
-            <span class="accent color--white"><?php if(get_field('event_speaker')): ?><?php the_field('event_speaker'); ?> | <?php endif; ?><?php echo tribe_get_start_date(); ?></span>
+            <em><span class="title title__sm color--white"><?php the_field('event_subtitle'); ?></span></em>
+            <span class="accent color--white"><?php if(get_field('event_speaker')): ?><?php the_field('event_speaker'); ?> | <?php endif; ?><?php echo tribe_get_start_date( $post, false, 'M d, Y' ); ?></span>
             <br>
             <br>
             <br>
@@ -37,7 +63,7 @@
       </div>
     </div>
     <div class="covered archive__single-bg--wrapper" style="background: #000">
-      <div class="archive__single-bg covered" style="background-image:url(<?php echo $bgImageUrl; ?>);"></div>
+      <div class="archive__single-bg covered" style="background-image:url(<?php echo $thumb; ?>);"></div>
     </div>
   </div>
 </div>

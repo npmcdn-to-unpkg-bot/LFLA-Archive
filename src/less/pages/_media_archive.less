@@ -240,7 +240,7 @@
       width: 100%;
       background-size: cover;
       background-position: top center;
-      margin-bottom: @spaced/2;
+      //margin-bottom: @spaced/2;
       @media @min {
         height: 140px;
       }
@@ -261,6 +261,15 @@
     }
     &__grid-item {
       margin-bottom: @spaced*2;
+      header {
+        padding-top: 10px;
+        line-height: 1.6;
+        display: block;
+        span {
+          //display: inline-block;
+          line-height: 1.5;
+        }
+      }
       > div {
         margin: 0 @spaced/2.75;
         position: relative;

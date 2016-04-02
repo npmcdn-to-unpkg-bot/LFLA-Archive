@@ -6253,6 +6253,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/img\/comingsoon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6121,
+		"inputAbbreviatedPath": "\/assets\/img\/comingsoon.png",
+		"outputAbbreviatedPath": "\/assets\/img\/comingsoon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/img\/default-skin.png": {
 		"fileType": 32768,
 		"ignore": 0,

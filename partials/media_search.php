@@ -25,7 +25,7 @@
       <form role="search" method="get" action="<?php echo home_url( '/' ); ?>" class="fs-row">
         <div class="fs-cell fs-lg-3 fs-md-2 fs-sm-3">
           <select name="program" class="bg--bgGray">
-            <option value="" class="text-center">Select Program</option>
+            <option value="" class="text-center">Select Series</option>
             <?php 
               $args = array(
                 'name' => 'tribe_events_cat',

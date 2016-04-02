@@ -11,22 +11,38 @@
     );
   }
 
-  # var_dump($eventdate);
+  if (isset($venue)) {
+    $venue_query[] =  array(
+      'key'     => '_EventVenueID',
+      'value'   => $venue,
+      'compare' => 'LIKE',
+    );
+  }
 
-  $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+  //var_dump($program);
+
+  //$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+
+  if ( get_query_var('paged') ) {
+    $paged = get_query_var('paged');
+  } else if ( get_query_var('page') ) {
+    $paged = get_query_var('page');
+  } else {
+    $paged = 1;
+  }
 
   $temp = $wp_query; 
   $wp_query = null; 
   $wp_query = new WP_Query(); 
 
   $current_args = array(
-    'posts_per_page' => 10,
+    'posts_per_page' => 15,
     'order'          => 'DESC',
     'post_status'    => 'publish',
     'post_type'      => 'tribe_events',
-    'meta_key'       => '_thumbnail_id',
-    'orderby'        => '_EventStartDate',  
-    '&paged'         => $paged,
+    'meta_key'       => '_EventStartDate',
+    'orderby'        => 'meta_value_num', 
+    'paged'          => $paged,
     'tax_query'      => $tax_query,
     's'              => $searchQuery,
     'meta_query'     => array(
@@ -43,10 +59,6 @@
     ),
   );
   $wp_query->query($current_args); 
-
-  //$current_posts = get_posts( $current_args );
-  // $query = new WP_Query( $current_args );
-  // $current_posts = $query->get_posts();
 ?>
 
 <div id="media-archive__latest">
@@ -75,7 +87,7 @@
 
             } else {
 
-              $thumb = '';
+              $thumb = '/assets/img/comingsoon.png';
 
             }
 
@@ -84,10 +96,9 @@
         <div class="archive__latest-thumb" style="background-image:url(<?php echo $thumb; ?>);"></div>
         <?php echo media_category(); ?>
         <header class="bg--white">
-          <?php if(get_field('event_speaker')): ?><span class="accent accent__sm"><?php the_field('event_speaker'); ?></span><br><?php endif; ?>
-          <span class="accent accent__sm"><?php echo tribe_get_start_date( $post, false, 'M Y' ); ?></span><br>
-          <span class="title title__xs"><?php echo strip_tags(get_the_title()); ?></span> <?php if(get_field('event_subtitle')):?>— <?php endif; ?>
-          <em><span class="title title__xxs"><?php echo strip_tags(get_field('event_subtitle')); ?></span></em><br>
+          <span class="accent accent__sm"><?php echo tribe_get_start_date( $post, false, 'M d, Y' ); ?></span><br>
+          <span class="title title__xs"><?php echo strip_tags(get_the_title()); ?></span> <?php if(get_field('event_speaker')):?>— <?php endif; ?>
+          <?php if(get_field('event_speaker')): ?><em><span class="title title__xxs"><?php echo strip_tags(get_field('event_speaker')); ?></span></em><br><?php endif; ?>
           
           <!--<?php if(get_field('gallery')): ?><span class="ss-gizmo ss-gallery"></span><?php endif; ?>-->
           <!--<?php if(get_field('podcast')): ?><span class="ss-gizmo ss-music"></span><?php endif; ?>-->

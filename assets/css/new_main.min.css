@@ -5226,7 +5226,6 @@ html {
   width: 100%;
   background-size: cover;
   background-position: top center;
-  margin-bottom: 12.5px;
 }
 @media screen and (min-width: 300px) {
   .archive__latest-thumb {
@@ -5248,6 +5247,14 @@ html {
 }
 .archive__latest__grid-item {
   margin-bottom: 50px;
+}
+.archive__latest__grid-item header {
+  padding-top: 10px;
+  line-height: 1.6;
+  display: block;
+}
+.archive__latest__grid-item header span {
+  line-height: 1.5;
 }
 .archive__latest__grid-item > div {
   margin: 0 9.09090909px;
