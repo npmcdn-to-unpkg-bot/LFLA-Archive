@@ -12,7 +12,7 @@ function media_category() {
 
   echo '<ul class="archive__cats">';
 
-  foreach($terms as $term):
+  if($terms): foreach($terms as $term):
 
     $termName = $term->name;
     
@@ -30,7 +30,7 @@ function media_category() {
     echo $termName;
     echo '</span>'; 
     echo '</li>'; 
-  endforeach;
+  endforeach; endif;
 
   echo '</ul>';
 
@@ -70,7 +70,7 @@ function featured_category() {
     echo $termName;
     echo '</span>'; 
     echo '</li>'; 
-  endforeach;
+  endforeach; ;
 
   echo '</ul>';
 

@@ -35,28 +35,35 @@
   $wp_query = null; 
   $wp_query = new WP_Query(); 
 
+  $today = date("Y-m-d");  //today's date in MySQL format without the time. Used to compare start date custom field in events. 
+
   $current_args = array(
     'posts_per_page' => 15,
     'order'          => 'DESC',
-    //'post_status'    => 'publish',
+    'post_status'    => 'publish',
     'post_type'      => 'tribe_events',
-    'meta_key'       => '_EventStartDate',
-    'orderby'        => 'meta_value_num', 
     'eventDisplay'   => 'past',
-    'paged'          => $paged,
-    'tax_query'      => $tax_query,
-    's'              => $searchQuery,
+    //'meta_key'       => '_EventStartDate',
+    //'orderby'        => 'meta_value_num', 
+    //'paged'          => $paged,
+    //'tax_query'      => $tax_query,
+    //'s'              => $searchQuery,
     'meta_query'     => array(
-      array(
-        'key'     => '_EventStartDate',
-        'value'   => $eventdate,
-        'compare' => 'LIKE',
-      ),
-      array(
-        'key'     => '_EventVenueID',
-        'value'   => $venue,
-        'compare' => 'LIKE',
-      ),
+      //array(
+      //  'key'     => '_EventStartDate',
+      //  'value'   => $today,
+      //  'compare' => '<=',
+      //),
+      //array(
+      //  'key'     => '_EventStartDate',
+      //  'value'   => $eventdate,
+      //  'compare' => 'LIKE',
+      //),
+      //array(
+      //  'key'     => '_EventVenueID',
+      //  'value'   => $venue,
+      //  'compare' => 'LIKE',
+      //),
     ),
   );
   $wp_query->query($current_args); 
