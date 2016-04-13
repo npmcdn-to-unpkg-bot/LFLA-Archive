@@ -56,13 +56,26 @@
         </div>
         <div class="fs-cell fs-lg-3 fs-md-2 fs-sm-3">
           <select name="venue" class="bg--bgGray">
-            <option value="" class="text-center">Select Venue</option>
-            <?php 
-              $venues = tribe_get_venues();
-              foreach($venues as $post): setup_postdata($post);
-            ?>
-            <option <?php if( $venue == get_the_id()): echo 'selected'; endif; ?> value="<?php the_id(); ?>"><?php the_title(); ?></option>
-            <?php endforeach; wp_reset_postdata(); ?>
+            <option value="" class="text-center">Select Subject</option>
+            <option value="Biography">Biography</option>
+            <option value="California/The West">California/The West</option>
+            <option value="Current Events">Current Events</option>
+            <option value="Essay/Memoir">Essay/Memoir</option>
+            <option value="Fiction/Literature">Fiction/Literature</option>
+            <option value="History/Bio">History/Bio</option>
+            <option value="Poetry">Poetry</option>
+            <option value="Religion/Spirituality">Religion/Spirituality</option>
+            <option value="Science/Nature">Science/Nature</option>
+            <option value="Social Sci/Politics">Social Sci/Politics</option>
+            <option value="Technology">Technology</option>
+            <option value="Philosophy">Philosophy</option>
+            <option value="Music">Music</option>
+            <option value="Dance">Dance</option>
+            <option value="Visual Art/Graphic Design">Visual Art/Graphic Design</option>
+            <option value="Bilingual / Spanish language">Bilingual / Spanish language</option>
+            <option value="Food">Food</option>
+            <option value="Film">Film</option>
+            <option value="Architecture">Architecture</option>
           </select>
           </div>
           <div class="fs-cell fs-lg-3 fs-md-2 fs-sm-3"><input type='submit' value="Search" class="bg--blue"></div>

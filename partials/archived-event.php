@@ -47,17 +47,13 @@
   <div class="hero relative">
     <div class='centered centered--bottom centered--full' style="z-index: 60">
       <div class="fs-row">
-        <div class="fs-cell fs-lg-7 fs-md-6 fs-sm-3">
+        <div class="fs-cell fs-lg-12 fs-md-6 fs-sm-3">
           <div class="relative">
             <?php echo media_category(); ?>
             <br>
             <span class="archive__single-title title title__md color--white"><?php the_title(); ?></span><br><br>
             <em><span class="title title__sm color--white"><?php the_field('event_subtitle'); ?></span></em>
             <span class="accent color--white"><?php if(get_field('event_speaker')): ?><?php the_field('event_speaker'); ?> | <?php endif; ?><?php echo tribe_get_start_date( $post, false, 'M d, Y' ); ?></span>
-            <br>
-            <br>
-            <br>
-            <br>
           </div>
         </div>
       </div>
