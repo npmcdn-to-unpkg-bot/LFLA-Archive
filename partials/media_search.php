@@ -55,27 +55,27 @@
           </select>
         </div>
         <div class="fs-cell fs-lg-3 fs-md-2 fs-sm-3">
-          <select name="venue" class="bg--bgGray">
+          <select name="subject" class="bg--bgGray">
             <option value="" class="text-center">Select Subject</option>
-            <option value="Biography">Biography</option>
-            <option value="California/The West">California/The West</option>
-            <option value="Current Events">Current Events</option>
-            <option value="Essay/Memoir">Essay/Memoir</option>
-            <option value="Fiction/Literature">Fiction/Literature</option>
-            <option value="History/Bio">History/Bio</option>
-            <option value="Poetry">Poetry</option>
-            <option value="Religion/Spirituality">Religion/Spirituality</option>
-            <option value="Science/Nature">Science/Nature</option>
-            <option value="Social Sci/Politics">Social Sci/Politics</option>
-            <option value="Technology">Technology</option>
-            <option value="Philosophy">Philosophy</option>
-            <option value="Music">Music</option>
-            <option value="Dance">Dance</option>
-            <option value="Visual Art/Graphic Design">Visual Art/Graphic Design</option>
-            <option value="Bilingual / Spanish language">Bilingual / Spanish language</option>
-            <option value="Food">Food</option>
-            <option value="Film">Film</option>
-            <option value="Architecture">Architecture</option>
+            <option value="biography">Biography</option>
+            <option value="california-the-west">California/The West</option>
+            <option value="current-events">Current Events</option>
+            <option value="essay-memoir">Essay/Memoir</option>
+            <option value="fiction-literature">Fiction/Literature</option>
+            <option value="history-bio">History/Bio</option>
+            <option value="poetry">Poetry</option>
+            <option value="religion-spirituality">Religion/Spirituality</option>
+            <option value="science-nature">Science/Nature</option>
+            <option value="social-sci-politics">Social Sci/Politics</option>
+            <option value="technology">Technology</option>
+            <option value="philosophy">Philosophy</option>
+            <option value="music">Music</option>
+            <option value="dance">Dance</option>
+            <option value="visual-art-graphic-design">Visual Art/Graphic Design</option>
+            <option value="bilingual-spanish-language">Bilingual / Spanish language</option>
+            <option value="food">Food</option>
+            <option value="film">Film</option>
+            <option value="architecture">Architecture</option>
           </select>
           </div>
           <div class="fs-cell fs-lg-3 fs-md-2 fs-sm-3"><input type='submit' value="Search" class="bg--blue"></div>

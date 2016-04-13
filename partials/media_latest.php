@@ -11,7 +11,7 @@
     );
   }
 
-  if (isset($venue)) {
+  if (isset($subject)) {
     $venue_query[] =  array(
       'key'     => '_EventVenueID',
       'value'   => $venue,
@@ -44,6 +44,7 @@
     'orderby'        => 'meta_value_num', 
     'eventDisplay'   => 'past',
     'paged'          => $paged,
+    'tag'            => $subject,
     'tax_query'      => $tax_query,
     's'              => $searchQuery,
     'meta_query'     => array(
@@ -61,6 +62,8 @@
   );
   $wp_query->query($current_args); 
 ?>
+
+<?php # var_dump($subject); ?>
 
 <div id="media-archive__latest">
   <div class="iso-grid fs-row archive__latest">

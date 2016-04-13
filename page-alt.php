@@ -5,6 +5,7 @@
   $program     = $_GET['program'];
   $eventdate   = $_GET['eventdate'];
   $venue       = $_GET['venue'];
+  $subject     = $_GET['subject'];
 ?>
 
 <div id="media-archive" class="fs-grid">
