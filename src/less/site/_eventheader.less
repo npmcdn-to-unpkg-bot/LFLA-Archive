@@ -1,0 +1,51 @@
+.event-header {
+
+  background-color: #000;
+  overflow: hidden;
+
+  @media @min {
+    //min-height: 450px;
+  }
+
+  &__content {
+    @media @min {
+      padding-top: 140px;
+    }
+    @media @tablet {
+      padding-top: 190px;
+    }
+    @media @desktop {
+      padding-top: 220px;
+    }
+    padding-bottom: @spaced;
+    position: relative;
+    z-index: 77;
+  }
+
+  &__cats {
+    ul {
+      position: relative;
+      li {
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: @white;
+    font-weight: lighter;
+    margin: 0;
+    margin-bottom: @spaced/2;
+    @media @min {
+      .font_size(42);
+      line-height: 1.1;
+    }
+    @media @tablet {
+      .font_size(66);
+      line-height: .8;
+    }
+  }
+
+}

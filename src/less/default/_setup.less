@@ -128,7 +128,19 @@ img.rounded {
     width: 100%;
   }
   &--bottom {
-    top: 75%
+    @media @min {
+      top: 75%
+    }
+    @media @tablet {
+      top: 70%
+    }
+    @media @desktop {
+      top: 70%  
+    }
+    @media @max {
+      top: 75%  
+    }
+    
   }
 }
 

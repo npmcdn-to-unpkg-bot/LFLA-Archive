@@ -19,13 +19,13 @@
   }
 
 	@media @min {
-		height: @hero - 100;
+		height: @hero - 50;
 	}
   @media @mobile {
     height: @hero - 135;
   }
 	@media @tablet {
-		height: @hero - 100;
+		height: @hero;
 	}
 	@media @desktop {
 		height: @hero
@@ -130,6 +130,27 @@
 
   .covered {
     z-index: 25;
+  }
+
+  &--flex {
+    height: auto;
+    @media @min {
+      min-height: @hero - 100;
+    }
+    @media @mobile {
+      min-height: @hero - 135;
+    }
+    @media @tablet {
+      min-height: @hero - 100;
+    }
+    @media @desktop {
+      min-height: @hero
+    }
+    background: @black;
+    @media @desktop {
+      padding-top: 220px;
+      padding-bottom: @spaced;
+    }
   }
 
 }

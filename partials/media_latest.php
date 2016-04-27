@@ -101,7 +101,7 @@
         <?php echo media_category(); ?>
         <header class="bg--white">
           <span class="accent accent__sm"><?php echo tribe_get_start_date( $post, false, 'M d, Y' ); ?></span><br>
-          <span class="title title__xs"><?php echo strip_tags(get_the_title()); ?></span> <?php if(get_field('event_speaker')):?>— <?php endif; ?>
+          <span class="title title__xs"><?php echo strip_tags(get_the_title()); ?></span> <?php if(get_field('event_speaker')):?><br><?php endif; ?>
           <?php if(get_field('event_speaker')): ?><em><span class="title title__xxs"><?php echo strip_tags(get_field('event_speaker')); ?></span></em><br><?php endif; ?>
           
           <!--<?php if(get_field('gallery')): ?><span class="ss-gizmo ss-gallery"></span><?php endif; ?>-->
